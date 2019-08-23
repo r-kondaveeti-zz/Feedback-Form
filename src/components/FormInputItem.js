@@ -10,8 +10,7 @@ export class FormInputItem extends React.Component {
     }
 
     onChange = (event) => {
-        this.setState({value: event.target.value});
-        this.props.value(this.state.value);
+        this.setState({value: event.target.value}, () => this.props.value(this.state.value));
     }
 
     render() {

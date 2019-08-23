@@ -9,12 +9,16 @@ export class FormTextAreaItem extends React.Component {
    }
 
    onChange = (event)=> {
-        this.setState({value: event.target.value});
+        this.setState({value: event.target.value}, () => this.props.value(this.state.value));
    }
 
     render() {
         return (
-            <textarea placeholder={this.props.placeholder} onChange={this.onChange}></textarea>
+            <textarea 
+            name={this.props.name}
+            placeholder={this.props.placeholder} 
+            onChange={this.onChange}>
+            </textarea>
         );
     }
 }
