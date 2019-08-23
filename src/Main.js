@@ -31,7 +31,7 @@ export class Main extends React.Component {
     render() {
         return (
             <div>
-            <h2>FEEDBACK FORM</h2>
+            <h2 style={{color: '#FFFFFF'}}>FEEDBACK FORM</h2>
             <form onSubmit={this.handleSubmit}>
               <FormInputItem name="name" placeholder="Full Name" value={(name)=>{this.setState({name: name})}}/>
               <FormInputItem name="email" placeholder="Email" value={(email)=>{this.setState({email: email})}}/>
