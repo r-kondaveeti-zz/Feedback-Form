@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+For the back-end, package the back-end folder with maven lifecycle method package or install you'll be presented with an executable jar. Open your unix-based terminal and execute "java -jar 'location-to-the-jar'. The back-end Spring app would run on port 8080
+
 ## Available Scripts
 
 In the project directory, you can run:
