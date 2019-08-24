@@ -24,14 +24,14 @@ export class Main extends React.Component {
             email: this.state.email,
             feedback: this.state.feedback
         }
-        console.log(form)
-        axios.post('http://localhost:8080/add', qs.stringify(form)).then(res => console.log('nothing'));
+        this.props.values(this.state);
+        axios.post('http://localhost:8080/add', qs.stringify(form)).then();
     }
  
     render() {
         return (
             <div>
-            <h2 style={{color: '#FFFFFF'}}>FEEDBACK FORM</h2>
+            <h2 style={{color: '#FFFFFF'}}>Feedback Form <a href="/AllUsers" style={{float: "right"}}>List All Feedbacks</a></h2>
             <form onSubmit={this.handleSubmit}>
               <FormInputItem name="name" placeholder="Full Name" value={(name)=>{this.setState({name: name})}}/>
               <FormInputItem name="email" placeholder="Email" value={(email)=>{this.setState({email: email})}}/>
