@@ -1,9 +1,23 @@
 import React from 'react';
+import Axios from 'axios';
 
 export class Second extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            forms: []
+        }
+    }
+
+    componentDidMount = () => {
+        Axios.get('http://localhost:8080/findAll').then(resp => {
+            this.setState({forms: resp.data})
+        })
+    }
+
     render() {
-        const elements = this.props.values.map(element => {
+        const elements = this.state.forms.map(element => {
            return ( <a href="/" key={element.id} className="list-group-item list-group-item-action flex-column align-items-start">
             <div className="d-flex w-100 justify-content-between">
             <h5 className="mb-1">{element.name}</h5>

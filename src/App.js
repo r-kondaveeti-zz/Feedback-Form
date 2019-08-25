@@ -10,7 +10,7 @@ function App() {
     <div className="form-style-8">
     <Router>
       <Route  exact path="/" component={Main} />
-      <Route  exact path="/AllUsers" render={(props) => <Second values={[
+      {/* <Route  exact path="/AllUsers" render={(props) => <Second values={[
         {
           id: 1,
           name: 'Radhithya Reddy',
@@ -23,7 +23,8 @@ function App() {
           email: 'latha@kondaveeti@gmail.com',
           feedback: 'Radhithya is the greatest son in the world'
         }
-      ]} /> } />
+      ]} /> } /> */}
+      <Route  exact path="/AllUsers" render={(props) => <Second /> } />
     </Router>
     </div>
   );
